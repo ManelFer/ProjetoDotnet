@@ -7,7 +7,7 @@ namespace MeuPrograma;
 
 public partial class DashboardForm
 {
-    public void ShowHome()
+    public void ToolBox()
     {
         contentArea.SuspendLayout();
 
@@ -21,55 +21,23 @@ public partial class DashboardForm
                 BackColor = BgCanvas
             };
 
-            var header = CreateHeader();
-            var cardsGrid = CreateCardsGrid();
+            var header = CreateTools();
+            var cardsGrid = CreateToolsGrid();
 
             AddToolCard(
                 cardsGrid,
-                "Usuários",
+                "PDF Tools",
                 "Gerencie usuários, permissões e acessos.",
                 Color.FromArgb(37, 99, 235),
-                (_, _) => ShowComingSoon("Usuários")
+                (_, _) => ShowComingSoon("PDF Tools")
             );
 
             AddToolCard(
                 cardsGrid,
-                "Relatórios",
-                "Consulte relátorios das máquinas cadastradas",
-                Color.FromArgb(16, 185, 129),
-                (_, _) => ShowComingSoon("Relatórios")
-            );
-
-            AddToolCard(
-                cardsGrid,
-                "Infraestrutura",
-                "Consultar localização dos computadores.",
-                Color.FromArgb(239, 112, 68),
-                (_, _) => ShowComingSoon("Infraestrutura")
-            );
-
-            AddToolCard(
-                cardsGrid,
-                "Ferramentas",
-                "Consulte as ferramentas disponíveis.",
-                Color.FromArgb(46, 2, 223),
-                (_, _) => ToolBox()
-            );
-
-            AddToolCard(
-                cardsGrid,
-                "Configurações",
-                "Ajuste preferências e parâmetros do sistema.",
-                Color.FromArgb(245, 158, 11),
-                (_, _) => ShowComingSoon("Configurações")
-            );
-
-            AddToolCard(
-                cardsGrid,
-                "Sair",
+                "Voltar",
                 "Encerre a sessão atual com segurança.",
                 Color.FromArgb(239, 68, 68),
-                (_, _) => ConfirmExit()
+                (_, _) => ShowHome()
             );
 
             container.Controls.Add(cardsGrid);
@@ -82,7 +50,7 @@ public partial class DashboardForm
         }
     }
 
-    private Panel CreateHeader()
+    private Panel CreateTools()
     {
         var header = new Panel
         {
@@ -111,7 +79,7 @@ public partial class DashboardForm
         {
             Dock = DockStyle.Top,
             Height = 45,
-            Text = $"Bem-vindo, {usuario}! Verifique as atualizações de hoje.",
+            Text = $"Bem-vindo, ToolBox é o seu canto de ferramentas",
             Font = FontSubtitle,
             ForeColor = TextSecondary,
             Padding = new Padding(0, 4, 0, 0)
@@ -136,7 +104,7 @@ public partial class DashboardForm
         return header;
     }
 
-    private FlowLayoutPanel CreateCardsGrid()
+    private FlowLayoutPanel CreateToolsGrid()
     {
         return new FlowLayoutPanel
         {
