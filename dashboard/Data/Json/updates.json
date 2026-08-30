@@ -1,0 +1,22 @@
+[
+  {
+    "Version": "V1.0.0",
+    "Date": "2026-08-29",
+    "Changes": [
+      "Dashboard inicial com caixas de funções.",
+      "Organizacao das telas por funções.",
+      "Confirmacao antes de sair do sistema.",
+      "Botao Voltar nas telas dos modulos."
+    ]
+  },
+
+  {
+    "Version": "V1.0.1",
+    "Date": "2026-08-30",
+    "Changes": [
+      "Criado caixa de ferramentas.",
+      "Criado Ferramenta de PDF"
+    ]
+
+  }
+]

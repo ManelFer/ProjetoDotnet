@@ -1,0 +1,20 @@
+# Visual Studio / .NET
+.vs/
+bin/
+obj/
+packages/
+TestResults/
+
+# Arquivos de usuário do Visual Studio
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Build / cache
+*.cache
+*.pdb
+*.log
+
+# Opcional: se usar Rider/JetBrains
+.idea/
