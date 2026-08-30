@@ -55,7 +55,6 @@ ProjetoDotnet/
 * **`dashboard/Tela`**: Diferente visualizações ou janelas.
 * **`Resources/AppIcon/`**: Pasta que armazena os ativos visuais e o ícone de aplicativo personalizado do programa desktop.
 
-
 ---
 
 ## 🛠️ Tecnologias e Dependências
