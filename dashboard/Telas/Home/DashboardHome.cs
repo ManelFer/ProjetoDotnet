@@ -58,6 +58,14 @@ public partial class DashboardForm
 
             AddToolCard(
                 cardsGrid,
+                "Inventário",
+                "Consulte o inventário.",
+                Color.FromArgb(46, 10, 223),
+                (_, _) => ShowComingSoon("Inventário")
+            );
+
+            AddToolCard(
+                cardsGrid,
                 "Configurações",
                 "Ajuste preferências e parâmetros do sistema.",
                 Color.FromArgb(245, 158, 11),

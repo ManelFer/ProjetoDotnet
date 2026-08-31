@@ -27,7 +27,7 @@ public partial class DashboardForm
             AddToolCard(
                 cardsGrid,
                 "PDF Tools",
-                "Gerencie usuários, permissões e acessos.",
+                "Gerencie e manipule PDF.",
                 Color.FromArgb(37, 99, 235),
                 (_, _) => ShowComingSoon("PDF Tools")
             );
