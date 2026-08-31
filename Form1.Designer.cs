@@ -1,4 +1,7 @@
-﻿namespace MeuPrograma;
+﻿using MeuPrograma.dashboard.Componentes;
+using Svg;
+
+namespace MeuPrograma;
 
 partial class Form1
 {
@@ -30,6 +33,32 @@ partial class Form1
     {
         components = new System.ComponentModel.Container();
         lblTitulo = new Label();
+        var icon = new PictureBox
+        {
+            Width = 42,
+            Height = 42,
+            Anchor = AnchorStyles.None,
+            BackColor = Color.Transparent,
+            SizeMode = PictureBoxSizeMode.Zoom,
+            Image = LoadCsImage(),
+            Margin = new Padding(0)
+        };
+        var titleContainer = new TableLayoutPanel
+        {
+            AutoSize = true,
+            AutoSizeMode = AutoSizeMode.GrowAndShrink,
+            ColumnCount = 2,
+            RowCount = 1,
+            Dock = DockStyle.None,
+            Location = new Point(260, 52),
+            BackColor = Color.Transparent,
+            Padding = new Padding(0)
+        };
+        titleContainer.ColumnStyles.Add(new ColumnStyle(SizeType.AutoSize));
+        titleContainer.ColumnStyles.Add(new ColumnStyle(SizeType.AutoSize));
+        titleContainer.Controls.Add(lblTitulo, 0, 0);
+        titleContainer.Controls.Add(icon, 1, 0);
+
         lblUsuario = new Label();
         txtUsuario = new TextBox();
         lblSenha = new Label();
@@ -43,11 +72,11 @@ partial class Form1
         // 
         lblTitulo.AutoSize = true;
         lblTitulo.Font = new Font("Segoe UI", 20F, FontStyle.Bold);
-        lblTitulo.Location = new Point(285, 65);
         lblTitulo.Name = "lblTitulo";
-        lblTitulo.Size = new Size(190, 37);
         lblTitulo.TabIndex = 0;
-        lblTitulo.Text = "Meu sistema teste";
+        lblTitulo.Text = "Meu sistema";
+        lblTitulo.TextAlign = ContentAlignment.MiddleCenter;
+        lblTitulo.Margin = new Padding(0, 0, 8, 0);
         // 
         // lblUsuario
         // 
@@ -113,7 +142,7 @@ partial class Form1
         lblAjuda.Name = "lblAjuda";
         lblAjuda.Size = new Size(300, 15);
         lblAjuda.TabIndex = 7;
-        lblAjuda.Text = "Use admin / 1234 para testar";
+        lblAjuda.Text = AppVersion.Number;
         lblAjuda.TextAlign = ContentAlignment.MiddleCenter;
         // 
         // Form1
@@ -127,7 +156,7 @@ partial class Form1
         Controls.Add(lblSenha);
         Controls.Add(txtUsuario);
         Controls.Add(lblUsuario);
-        Controls.Add(lblTitulo);
+        Controls.Add(titleContainer);
         FormBorderStyle = FormBorderStyle.FixedSingle;
         MaximizeBox = false;
         MinimizeBox = false;
@@ -137,6 +166,22 @@ partial class Form1
         AcceptButton = btnEntrar;
         ResumeLayout(false);
         PerformLayout();
+    }
+     private static Image LoadCsImage()
+    {
+        var imagePath = Path.Combine(
+            AppContext.BaseDirectory,
+            "Resources",
+            "AppIcon",
+            "CS.svg");
+
+        if (!File.Exists(imagePath))
+        {
+            return new Bitmap(1, 1);
+        }
+
+        var svgDocument = SvgDocument.Open(imagePath);
+        return svgDocument.Draw();
     }
 
     private Label lblTitulo;
